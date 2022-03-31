@@ -1,0 +1,61 @@
+/** //--- Hamburger **/
+
+:root {
+    --color-hamburder-bg: white;
+    --color-hamburder-bg-dark: #3d3d3d;
+    --color-bar-bg: #666666;
+    --color-bar-bg-dark: white;
+
+
+}
+
+.hamburger-icon {
+    display: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background-color: var(--color-hamburder-bg);
+    z-index: 3;
+    transition: all 700ms ease;
+}
+
+body.dark-theme .hamburger-icon {
+    background-color: var(--color-hamburder-bg-dark);
+}
+
+@media (max-width: 768px) {
+    .hamburger-icon {
+        display: inline-block;
+    }
+}
+
+.hamburger-icon .hamburger-icon__bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--color-bar-bg);
+}
+
+body.dark-theme .hamburger-icon .hamburger-icon__bar {
+    background-color: var(--color-bar-bg-dark);
+}
+
+.hamburger-icon.active .hamburger-icon__bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-icon.active .hamburger-icon__bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-icon.active .hamburger-icon__bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/** //--- </ Hamburger **/
