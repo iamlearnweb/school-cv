@@ -1,0 +1,150 @@
+
+:root {
+    --size1250: 9rem;
+    --size1251: 3.5rem;
+    --size1252: -5.7rem;
+}
+
+.light {
+    background-color: #FFF9D9;
+    transition: background 0.5s ease-in-out;
+}
+
+
+button#toggle {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 2;
+}
+
+.toggle-pos {
+    position: absolute;
+    top: 0;
+    right: 2rem;
+}
+
+.toggle-label {
+    font-size: 0.8rem;
+    color: #8c8c8c;
+}
+
+.toggle-label-pos {
+    top: var(--size1251);
+    right: 2.8rem;
+}
+
+@media (max-width: 992px) {
+    .toggle-pos {
+        top: var(--size1250);
+    }
+
+    .toggle-label-pos {
+        top: calc(var(--size1250) + var(--size1251));
+        right: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .toggle-pos {
+        top: var(--size1252);
+        right: unset;
+        left: 2rem;
+    }
+    .toggle-label-pos {
+        top: calc(var(--size1252) + var(--size1251));
+        left: 2.5rem;
+    }
+}
+
+#moon {
+    transform: rotate(-45deg);
+    transform-origin: center center;
+}
+
+#toggle g circle {
+    transform-origin: center center;
+    transform: scale(0);
+}
+
+@keyframes hideMoon {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(135deg) scale(0.4);
+    }
+
+    60% {
+        transform: rotate(200deg) scale(0.2);
+    }
+
+    100% {
+        transform: rotate(200deg) scale(0);
+    }
+}
+
+@keyframes revealSun {
+    0% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(0.8);
+    }
+    80% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes revealBeams {
+    0% {
+        transform: scale(0);
+    }
+    25% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes hideSun {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes revealMoon {
+    0% {
+        transform: scale(0);
+    }
+    10% {
+        transform: scale(0.7) rotate(100deg);
+    }
+    40% {
+        transform: scale(1) rotate(-15deg);
+    }
+    50% {
+        transform: scale(1) rotate(-60deg);
+    }
+    74.755% {
+        transform: scale(1) rotate(-35deg);
+    }
+    85% {
+        transform: scale(1) rotate(-50deg);
+    }
+    100% {
+        transform: scale(1) rotate(-45deg);
+    }
+}
